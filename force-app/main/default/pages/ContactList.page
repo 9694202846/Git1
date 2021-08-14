@@ -1,0 +1,21 @@
+<apex:page standardController="contact" recordSetVar="contacts" >
+  <apex:pageBlock title="Contact List">
+  
+
+  <apex:pageBlockTable value="{!contacts}" var="ct">
+  <apex:column headerValue="Action"  > 
+                            <apex:outputLink value="{!URLFOR($Action.Contact.Edit,ct.Id,[retURL='/apex/ContactList'])}"> edit   </apex:outputLink>       
+                            
+                           II&nbsp;
+                       <apex:outputLink value="{!URLFOR($Action.Contact.Delete,ct.Id,[retURL='/apex/ContactList'])}"> <apex:outputText value="Delete"/> </apex:outputLink>
+                         </apex:column> 
+
+  <apex:column value="{!ct.Name}"/>
+  <apex:column value="{!ct.Phone}"/>
+  <apex:column value="{!ct.email}"/>
+  <apex:column value="{!ct.Birthdate}"/>
+  
+  </apex:pageBlockTable>
+  
+  </apex:pageBlock>
+</apex:page>

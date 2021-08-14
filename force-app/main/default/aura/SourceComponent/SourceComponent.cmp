@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:registerEvent name="componenetEvent" type="c:CmpEvent"/>
+    <lightning:button label="press button" name="press button" value="press button" onclick="{!c.handlePress}"/>
+</aura:component>

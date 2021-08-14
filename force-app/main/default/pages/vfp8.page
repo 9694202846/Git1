@@ -1,0 +1,6 @@
+<apex:page action="{!URLFOR($Action.Opportunity.List, $ObjectType.Opportunity)}">
+
+
+
+
+</apex:page>

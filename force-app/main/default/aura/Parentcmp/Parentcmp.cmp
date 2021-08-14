@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="Parentattr" type="string"/>
+   parentvalue: {!v.Parentattr}
+    <lightning:button label="click on parent" onclick="{!c.clickSave}"/>
+    <c:Childcmp childattr="{!v.Parentattr}"/> 
+    <!-- <c:childcmp/> -->
+</aura:component>

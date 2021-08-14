@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:handler name="SearchFromSumbit" event="c:CarSearchFormSummit" action="{!c.doFormSubmit}" />
+        <lightning:card footer="Card Footer" title="Search Your Car" Class="bottom-Margin">
+            <c:CarSearchform/>
+        
+    </lightning:card>
+</aura:component>

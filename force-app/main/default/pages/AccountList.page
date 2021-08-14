@@ -1,0 +1,48 @@
+<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false">
+
+
+    <apex:pageBlock >
+
+          <apex:repeat value="{!accounts}" var="a" >
+
+                <apex:pageBlockSection title="{!a.name}" columns="1">
+                <ul id="hdrnav">
+                <li><a href="/apex/billing" id="billnav">Billing</a>
+                <apex:outputLink value="/{a.id}">Link</apex:outputLink>
+                
+                
+                
+                
+                </li>
+                
+                
+                
+                
+                </ul>
+
+                      <apex:relatedList list="Contacts" subject="{!a.Id}"/>
+                      <script>
+  Sfdc.onReady(function() {
+    var keyPrefix = 'a7m';
+    var toRemove = document.getElementsByName('NewContact');
+    if(document.location.href.indexOf('/' + keyPrefix + '/o') != -1 && toRemove && toRemove.length) {
+      toRemove[0].style.display = 'none';
+    }
+  });
+</script>
+                      if (document.location.href.toString().indexOf("/a49/o") != -1) {
+        $('input[name=new Contact]').hide(); 
+ }
+
+                </apex:pageBlockSection>
+
+            </apex:repeat>     
+
+         </apex:pageBlock>
+         
+
+
+
+    
+ 
+</apex:page>

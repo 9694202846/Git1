@@ -1,0 +1,14 @@
+<apex:page >
+  <!-- Hi Abhijit,
+
+Please consider this email as my resignation from my current position. Please accept this letter as a formal notification of my resignation from the position of Salesforce Developer with TCS.
+I would like to thank you for giving me an opportunity to work in this position for the past 1.6 years. It was great working experience with the company and I thoroughly enjoyed and appreciated the opportunities I got within the team.
+
+I would like to mention that I learned a lot from TCS team and I will proudly carry them along with all the happy memories, throughout my career.
+During my official notice period, I will ensure a smooth transition by wrapping up all my duties as well as train my successors/teammates. Please feel free to let me know if there’s anything else I can do to aid in a smooth transition, during my stay.
+
+I wish my teammates and the company all the success, and I hope to stay in touch with all of you in the future. -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

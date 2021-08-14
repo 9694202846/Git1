@@ -1,0 +1,53 @@
+<aura:component controller="AccountWithContact" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name ="accounts" type ="Account[]" />
+    <aura:attribute name ="Contacts" type ="Contact[]" />
+    <aura:attribute name ="isNewAvailable" type ="boolean"  default="false"/>
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   
+     <lightning:card footer="Card Footer" title="Account List">
+        <lightning:layout horizontalAlign ="center">
+                
+    
+            <lightning:layoutItem  >
+                <lightning:select aura:id="accountList" name="select" variant="label-hidden" value='' label="Select a pie" onchange="{!c.onChange}" >
+                    <option value="">ALL Account</option>
+                    <aura:iteration items="{!v.accounts}" var="account">
+                        <option value="{!account.id}" label="{!account.Name}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+                
+            </lightning:layout>
+        </lightning:card>
+    <div>
+    <p>Selected Items:</p>
+        <p><ui:outputText class="result" aura:id="dynamicResult2" value="" /></p>
+        </div>
+         
+    
+    <lightning:card footer="Card Footer" title="Contact List">
+        <lightning:layout horizontalAlign ="center">
+            
+            <lightning:layoutItem  >
+                <lightning:select aura:id="ContactList" name="select" variant="label-hidden" value='' label="Select a pie"  >
+                    <option value="">ALL Contact</option>
+                    <aura:iteration items="{!v.Contacts}" var="Contact">
+                        <option value="{!Contact.id}" label="{!Contact.Name}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+                
+            </lightning:layout>
+        </lightning:card>
+    
+    <div class="row">
+   <p class="title">Dynamic Option Generation</p>
+   <ui:inputSelect label="Select me: " class="dynamic" aura:id="InputSelectDynamic" change="{!c.onChange}" />
+   <p>Selected Items:</p>
+   <p><ui:outputText class="result" aura:id="dynamicResult" value="" /></p>
+</div>
+    
+    
+</aura:component>

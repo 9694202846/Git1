@@ -1,0 +1,15 @@
+<design:component>
+    <design:attribute name="objectName" label="Records from Object?"  />
+    <design:attribute name="fieldList" label="List Of Fields to be displayed in column- (API Name)"  />
+    <design:attribute name="linkOnField" label="Record Link on which Field?"/>
+    <design:attribute name="whereClause" label="Any More filters?"/>
+    <design:attribute name="isRelatedList" label="Is Related List? True/False?"/>
+    <design:attribute name="relatedField" label="If Yes? Relationship Field Name-"/>
+    <design:attribute name="isFieldSet" label="Refer Columns from Field Set? True/False?"/>
+    <design:attribute name="fieldSetName" label="If Yes? Field Set Name-"/>
+    <design:attribute name="height" label="Height-"/>
+    <design:attribute name="width" label="Width-"/>
+    <design:attribute name="downloadCSVOption" label="Download CSV Option? True/False?"/>
+    <design:attribute name="allowSelection" label="Hide Row Selection? True/False?"/>
+    <!--<design:attribute name="showRowNumber" label="Hide Row Number? True/False?"/>-->
+</design:component>

@@ -1,0 +1,12 @@
+<apex:page controller="customcontroller1">
+<apex:form >
+<apex:commandButton action="{!buttonclicked}" value="click Here"/>{!clickCount}
+
+
+
+
+
+
+</apex:form>
+  
+</apex:page>

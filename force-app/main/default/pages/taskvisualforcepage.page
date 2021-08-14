@@ -1,0 +1,18 @@
+<apex:page standardController="Task" extensions="LogACallControllerExtension">
+<apex:form >
+<apex:pageBlock mode="edit">
+<apex:pageblockButtons >
+<apex:commandButton value="Save" action="{!save}" />
+</apex:pageblockButtons>
+        <apex:pageBlockSection title="Information" columns="1">
+            <apex:inputField value="{!Task.Whatid}"/>
+            <apex:inputField value="{!Task.Subject}"/>
+            <apex:inputField value="{!Task.Priority}"/>
+            <apex:inputField value="{!Task.Status}"/>
+            
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

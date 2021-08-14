@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,force:hasSObjectName,flexipage:availableForallPageTypes,force:hasRecordId,force:lightningQuickAction,forceCommunity:availableForAllPageTypes" access="global" controller="ListViewClass" >
+    <aura:attribute name="ListView" type ="List"/>
+    <aura:attribute name="selectedListView" type ="String"/>
+    <aura:attribute name="showListView" type="boolean" default="false"/> 
+    <aura:attribute name="SObjectName" type ="String"/>
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" /> 
+    
+    <lightning:select aura:id="select" name="select" label="Select a List View" onchange="{!c.onChange }">
+        <aura:iteration items="{!v.ListView}" var="item">
+            <option value="{!item.DeveloperName}">{!item.Name}</option>
+        </aura:iteration> 
+    </lightning:select>
+    <aura:if isTrue="{!v.showListView}">
+        <lightning:listView aura:id="acc"
+                            objectApiName="{!v.SObjectName}"
+                            listName="{!v.selectedListView}"
+                            rows="5"
+                            showSearchBar="true"
+                            showActionBar="false"
+                            enableInlineEdit="false"
+                            showRowLevelActions="false"
+                            /> 
+    </aura:if>
+    
+    
+</aura:component>

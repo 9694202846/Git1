@@ -1,0 +1,11 @@
+<apex:page docType="html-5.0" standardController="Opportunity" title="Close Opportunity">
+
+    <script src='/canvas/sdk/js/publisher.js'></script>
+
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Opportunity" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+   
+    
+</apex:page>

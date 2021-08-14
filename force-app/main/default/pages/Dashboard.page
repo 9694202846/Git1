@@ -1,0 +1,10 @@
+<apex:page standardController="Lead"> 
+ <apex:panelGrid columns="3">
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+   <analytics:reportChart reportId="00O28000005VmrZ" />
+</apex:panelGrid>
+</apex:page>

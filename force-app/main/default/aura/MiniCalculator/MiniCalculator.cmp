@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="firstValue" type="Integer"/>
+     <aura:attribute name="secondValue" type="Integer"/>
+     <aura:attribute name="outputField" type="Integer"/>
+
+    <lightning:input type="number" value="{!v.firstValue}" required="true" label="Please Enter First Value"/>
+    <lightning:input type="number" value="{!v.secondValue}" required="true"  label="Please Enter second Value" />
+       
+    <lightning:button label="Add" title="Add" onclick="{! c.handleAdd }"/>
+   <lightning:button label="Sub" title="Sub" onclick="{! c.handleSub }"/>
+   <lightning:button label="Multiply" title="Multiply" onclick="{! c.handleMult }"/>
+   <lightning:button label="Divide" title="Divide" onclick="{! c.handleDivide }"/>
+
+    
+     Output:-{!v.outputField} 
+
+    
+</aura:component>

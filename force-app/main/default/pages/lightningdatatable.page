@@ -1,0 +1,92 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0"> 
+
+ 
+<!-- HEADING AREA -->
+<!-- MEDIA OBJECT = FIGURE + BODY -->
+<div class="slds-media">
+
+  <div class="slds-media__figure">
+    <span class="slds-avatar slds-avatar--large">
+      <img src="{!URLFOR($Resource.SLDS0120, 'assets/images/avatar1.jpg')}" alt="meaningful textmeaningful text" height="300px" />
+    </span>
+  </div>
+
+  <div class="slds-media__body">
+    <p class="slds-text-heading--label">Accounts</p>
+    <h1 class="slds-text-heading--medium">My Accounts</h1>
+  </div>
+
+</div>
+<!-- / MEDIA OBJECT -->
+<!-- /HEADING AREA -->
+
+
+
+ 
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   
+
+ 
+
+<head>
+
+  <title>Salesforce Lightning Design System Trailhead Module</title>
+
+  <apex:stylesheet value="{$Resource.SLDS0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+</head>   
+
+<body>
+<apex:remoteObjects >
+  <apex:remoteObjectModel name="Account" fields="Id,Name,LastModifiedDate"/>
+</apex:remoteObjects>    
+
+</body>
+
+<!-- PRIMARY CONTENT WRAPPER -->
+<div class="myapp">    
+
+  <!-- ACCOUNT LIST TABLE -->
+  <div id="accountList" class="slds-p-vertical--medium"></div>
+  <!-- / ACCOUNT LIST TABLE -->    
+
+</div>
+<!-- / PRIMARY CONTENT WRAPPER -->
+<!-- JAVASCRIPT -->
+<script>
+  var account = new SObjectModel.Account();
+  var outputDiv = document.getElementById("accountList");    
+
+  function updateOutputDiv() {    
+
+    account.retrieve(
+      {orderby: [{LastModifiedDate: 'DESC'}], limit: 10},
+      function(error, records) {
+        if (error) {
+          alert(error.message);
+        } else {
+          var html = '<div class="slds-scrollable--x"><table class="slds-table slds-table--bordered">';    
+
+          html += '<thead><tr><th scope="col">Account name</th>';
+          html += '<th scope="col">Account ID</th></tr></thead><tbody>';    
+
+          records.forEach(function(record) {
+              html += '<tr><td>' + record.get("Name") + '</td>';
+              html += '<td>' + record.get("Id") + '</td></tr>';
+          });
+          html = html + '</tbody></table></div>';
+          outputDiv.innerHTML = html;
+        }
+      }
+    );
+  }
+  updateOutputDiv();
+</script>
+<!-- / JAVASCRIPT -->
+
+</html>
+
+
+
+
+</apex:page>

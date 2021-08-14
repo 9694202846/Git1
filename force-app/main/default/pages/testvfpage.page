@@ -1,0 +1,43 @@
+<apex:page >
+<apex:form >
+<apex:pageBlock title="Edit">
+<apex:pageBlockSection title="Controller Information">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</apex:pageBlockSection>
+
+
+
+
+
+
+
+
+
+
+</apex:pageBlock>
+
+
+
+
+
+</apex:form>
+
+  
+</apex:page>

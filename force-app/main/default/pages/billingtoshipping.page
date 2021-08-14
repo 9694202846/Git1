@@ -1,0 +1,97 @@
+<apex:page standardController="Account" extensions="Billing_Shipping_Con" >
+<apex:form >
+   
+   <apex:pageBlock title="Account Edit">
+   <apex:pageBlockSection title="Account Information">
+   <apex:inputField value="{!Account.Name}"/>
+   
+  
+   <Apex:inputField value="{!Account.Site}"/>
+   <apex:inputField value="{!Account.AccountSource}"/>
+   <apex:inputField value="{!Account.AnnualRevenue}"/>
+   <apex:inputField Value="{!Account.CleanStatus}"/>
+   
+   <apex:inputField value="{!Account.Jigsaw}"/>
+   <apex:inputField value="{!Account.Description}"/>
+   <apex:inputField value="{!Account.DunsNumber}"/>
+   <apex:inputField value="{!Account.NumberOfEmployees}"/>
+   <apex:inputField value="{!Account.Fax}"/>
+   <apex:inputField value="{!Account.Industry}"/>
+    <apex:inputField value="{!Account.Industry}"/>
+   
+    <apex:inputField value="{!Account.NaicsCode}"/>
+   
+    <apex:inputField value="{!Account.NaicsDesc}"/>
+   
+    <apex:inputField value="{!Account.Phone}"/>
+   
+    <apex:inputField value="{!Account.Rating}"/>
+   
+    <apex:inputField value="{!Account.Sic}"/>
+   
+    <apex:inputField value="{!Account.SicDesc}"/>
+   
+    <apex:inputField value="{!Account.TickerSymbol}"/>
+    <apex:inputField value="{!Account.Tradestyle}"/>
+   
+    <apex:inputField value="{!Account.Website}"/>
+    <apex:inputField value="{!Account.YearStarted}"/>
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   </apex:pageBlockSection>
+   
+   <apex:pageblockSection title="New Section">
+    <apex:inputField value="{!Account.Type}"/>
+    <apex:inputfield value="{!Account.AccountNumber}"/>
+   </apex:pageblockSection>
+   
+   
+   
+   </apex:pageBlock>
+   </apex:form>
+   <apex:form id="myform">
+    <script type="text/javascript">
+        function addressCopy(sstreet1, scity1, sstate1, sPostalCode1, scountry1, bstreet1, bcity1, bstate1, bPostalCode1, bcountry1) {
+    document.getElementById(bstreet1).value = document.getElementById(sstreet1).value;
+    document.getElementById(bcity1).value = document.getElementById(scity1).value;
+  document.getElementById(bstate1).value = document.getElementById(sstate1).value;
+document.getElementById(bPostalCode1).value=document.getElementById(sPostalCode1).value;
+ document.getElementById(bcountry1).value = document.getElementById(scountry1).value;
+     return false;
+  }
+    </script>
+     <apex:pageBlock title="Shipping Address to Billing Address" id="page">
+        <apex:pageBlockSection columns="2" id="pgblock">
+          <apex:facet name="header">
+                   <span class="pbSubExtra">
+                        <span class="bodySmall">
+    <a href="javascript:addressCopy('{!$Component.sstreet1}','{!$Component.scity1}', 
+                 '{!$Component.sstate1}','{!$Component.sPostalCode1}',
+              '{!$Component.scountry1}','{!$Component.bstreet1}','{!$Component.bcity1}', 
+       '{!$Component.bstate1}','{!$Component.bPostalCode1}','{!$Component.bcountry1}')">
+                      Copy Shipping  Address toBilling Address</a>
+                        </span> </span>
+                   <h3>Address Information<span class="titleSeparatingColon">:</span></h3>   
+            </apex:facet>
+          <apex:inputTextarea label="Billing Street" value="{!BStreet}" id="bstreet1" />
+          <apex:inputTextarea label="Shipping Street" value="{!SStreet}" id="sstreet1" />
+          <apex:inputText label="Billing City" value="{!BCity}" id="bcity1"/>
+          <apex:inputText label="Shipping City" value="{!SCity}" id="scity1"/>
+          <apex:inputText label="Billing State" value="{!BState}" id="bstate1"/>
+        <apex:inputText label="Shipping State" value="{!SState}" id="sstate1"/>
+         <apex:inputText label="Billing Postal Code" value="{!BZip}" id="bPostalCode1"/>
+          <apex:inputText label="Shipping Postal Code" value="{!SZip}" id="SPostalCode1"/>
+          <apex:inputtext label="Billing Country" value="{!BCountry}" id="bcountry1"/>
+          <apex:inputtext label="Shipping Country" value="{!SCountry}" id="scountry1"/>
+        </apex:pageBlockSection>
+       
+     </apex:pageBlock>
+  </apex:form>
+</apex:page>

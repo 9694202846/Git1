@@ -1,0 +1,48 @@
+<aura:component implements="force:appHostable,force:hasSObjectName,flexipage:availableForallPageTypes,force:hasRecordId,force:lightningQuickAction,forceCommunity:availableForAllPageTypes" access="global" controller="DynamicDataTable" >
+    <!-- Attributes To Set-->
+    <aura:attribute name="objectName" type="String" default="Contact"/>
+    <lightning:helptext
+        content="Your email address will be your login name" />
+    <aura:attribute name="fieldList"  type="String" default="FirstName,Email"/>
+    <aura:attribute name="linkOnField" type="String" default="Name"/>
+    <aura:attribute name="relatedField" type="String" default="AccountId"/>
+    <aura:attribute name="isRelatedList" type="Boolean" default="false"/>
+    <aura:attribute name="isFieldSet" type="boolean" default="false"/>
+    <aura:attribute name="fieldSetName" type="string" default=""/>
+    <aura:attribute name="whereClause" type="string" default=""/>
+    <aura:attribute name="recordId" type="string" default=""/>
+    <aura:attribute name="height" type="integer" default="300"/>
+    <lightning:helptext
+        content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+    />
+    <aura:attribute name="width" type="integer" default="200"/>
+    <aura:attribute name="downloadCSVOption" type="Boolean" default="false"/>
+    <aura:attribute name="allowSelection" type="Boolean" default="false"/>
+    <!--<aura:attribute name="showRowNumber" type="Boolean" default="false"/>-->
+    
+    <!-- DataTable Column and Data -->
+    <aura:attribute name="data" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+    
+    <!-- DataTable Sorting -->
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:attribute name="sortDirection" type="String"/>
+    
+    <!-- handler-->
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:if isTrue="{!v.downloadCSVOption}">
+        <button class="slds-button slds-button--brand" onclick="{!c.downloadCsv}">Download As CSV</button> <br/><br/>
+    </aura:if>
+    
+    <div style="{!'height:'+v.height+'px; width: '+v.width+' px'}">
+        <lightning:datatable aura:id="dataTable"
+                             keyField="Id"
+                             data="{!v.data}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="{!v.allowSelection}"
+                             sortedBy="{!v.sortBy}"
+                             sortedDirection="{!v.sortDirection}"
+                             onsort="{!c.handleSort}"/><!--showRowNumberColumn="{!c.showRowNumber}"-->
+    </div>
+</aura:component>

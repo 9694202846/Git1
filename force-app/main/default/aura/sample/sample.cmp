@@ -1,0 +1,15 @@
+<aura:component>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+  
+
+
+
+<div class="row">
+   <p class="title">Dynamic Option Generation</p>
+   <ui:inputSelect label="Select me: " class="dynamic" aura:id="InputSelectDynamic" change="{!c.onChange}" />
+   <p>Selected Items:</p>
+   <p><ui:outputText class="result" aura:id="dynamicResult" value="" /></p>
+</div>
+  
+</aura:component>

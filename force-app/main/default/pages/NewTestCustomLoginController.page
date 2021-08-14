@@ -1,0 +1,13 @@
+<apex:page id="communitiesLandingPage" controller="TestCustomLoginController" action="{!forwardToCustomAuthPage}" title="{!$Label.site.site_login}">
+
+<apex:form forceSSL="true" styleClass="form-signin col-md-4 col-centered">
+        <apex:actionFunction name="login" action="{!login}" />
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="username" class="sr-only">Email address</label>
+        <apex:inputText value="{!username}" id="username" styleClass="form-control" html-placeholder="Email" />
+        <label for="password" class="sr-only">Password</label>
+        <apex:inputSecret id="password" value="{!password}" styleClass="form-control" html-placeholder="Password" />
+        <apex:commandButton value="Sign in" styleClass="btn btn-lg btn-primary btn-block" action="{!login}" />
+
+    </apex:form>
+    </apex:page>

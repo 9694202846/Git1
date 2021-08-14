@@ -1,0 +1,16 @@
+<aura:component
+  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+  access="global">
+    
+  <p class="Paragraph1"> Paragraph1</p>
+
+  <div> 
+      <p class="Paragraph2">Paragraph2</p> 
+  </div>
+    
+  <div>
+    <div> 
+        <p class="Paragraph3">Paragraph3</p> 
+      </div>
+   </div>
+</aura:component>

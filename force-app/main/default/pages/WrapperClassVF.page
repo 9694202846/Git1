@@ -1,0 +1,26 @@
+<!-- Creating this page for dispaly Testing__c and DataLoadTesting__c object in single table with check box -->
+<apex:page sidebar="false" controller="WrapperIntStringDisplayClass">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:pageBlockTable value="{!lstwrapperIntString}"             var="w">
+<apex:column headervalue="Action">
+<apex:inputcheckbox />
+</apex:column>
+<apex:column headervalue="TestingName">
+{!w.Tname}
+</apex:column>
+<apex:column headerValue="TestingCity">
+{!w.Tcity}
+</apex:column>
+<apex:column headervalue="DataLoadCountry">
+{!w.Dcountry}
+</apex:column>
+<apex:column headerValue="DataLoadPhone">
+{!w.Dphone}
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

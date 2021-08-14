@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="ContactNewController">
+    <aura:attribute name="ContactList" type="Contact[]" />
+    <aura:attribute name="totleRecords" type="Integer" />
+        <aura:attribute name="recordId" type="Id" />
+    <c:QuickComponent accountId="{!v.recordId}"/>
+
+    <aura:handler name="init"  value="{!this}"  action="{!c.myAction}"/>
+    <div class="slds-p-around_xxx-small">
+        {!v.recordId}
+        TOTEL RECORDS {!v.totleRecords}
+        
+        <div class="slds-grid slds-wrap ">
+            
+            <aura:iteration items="{!v.ContactList}" var="con">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xxx-small">
+                    <lightning:card footer="Card Footer" title="{!con.Name}" iconName="standard:contact">
+                        <p class="slds-p-horizontal_small">
+                            {!con.Phone}   <br></br>
+                            {!con.Email}
+                        </p>
+                        <aura:set attribute="actions">
+                            <lightning:button name="{!con.Id}" label="View Details" variant="brand"
+                                              onclick="{!c.doRedirect}"/>
+                        </aura:set>
+                    </lightning:card>
+                </div>
+                
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

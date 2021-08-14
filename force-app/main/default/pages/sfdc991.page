@@ -1,0 +1,29 @@
+<apex:page standardController="Account" showHeader="False">
+<apex:form >
+    <apex:pageBlock title="Hello {!$User.FirstName}!">
+    <apex:pageBlockSection title="Information" columns="4">
+    <apex:inputField value="{!Account.Fax}"/>
+    <apex:inputField value="{!Account.AccountNumber}"/>
+    <apex:inputField value="{!Account.AccountSource}"/>
+    <apex:inputField value="{!Account.Jigsaw}"/>
+  
+    
+    
+    
+    
+    
+    </apex:pageBlockSection>
+        
+          <apex:pageBlockButtons >
+    <apex:commandButton action="{!save}" value="Save"/>
+    
+    
+    
+    
+    
+    
+    </apex:pageBlockButtons>
+    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"
+                Controller="AccountListController">
+    
+    <aura:attribute type="Account" name="acctList"/>
+    <aura:attribute type="Integer" name="AccountCount"/>
+    <aura:attribute name="totalRecordsCount" type="integer"/>
+
+    
+    
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:attribute name="sortDirection" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAccounts}"/> 
+    <span class="slds-truncate" title="My Accounts"><b> {!v.totalRecordsCount} </b></span>
+    <lightning:card>
+    <lightning:datatable data="{!v.acctList}"
+                         columns="{!v.mycolumns}"
+                         keyField="id"
+                         hideCheckboxColumn="true"
+                         sortedBy="{!v.sortBy}"
+                         sortedDirection="{!v.sortDirection}"
+                         onsort="{!c.handleSort}"/> 
+        </lightning:card>
+    
+</aura:component>

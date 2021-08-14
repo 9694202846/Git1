@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="beerId" type="string"/>
+         <lightning:navigation aura:id="navService"/>
+       <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <lightning:card>
+     <div class="slds-p-around-small">
+	<lightning:recordForm
+        recordId="{!v.beerId}"
+        objectApiName="payal09__Beer__c"
+        layoutType="Full"
+        columns="2"
+        mode="readonly" />
+    <lightning:button variant="brand" label="Order Now"  onclick="{!c.handleClick}"/>
+    </div>
+        </lightning:card>
+</aura:component>

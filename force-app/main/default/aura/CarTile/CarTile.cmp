@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name ="car" type ="Car__c"  default="{
+                                                 'sObjectType':'Car__c',
+                                                                  'Picture__c':'/resource/Picture/Cars/luxury/ford_mustard.jpg',
+                                                 'Name':'Manish'}"/>
+                                                         
+                                                  
+                    
+    <lightning:button label="Neutral" title="Neutral action" class="tile">
+        <div style ="{# 'background-image: url('+ v.car.Picture__c + ')'}" class="innertile">
+            {!v.car.Picture__c}
+            <div class="lower-third">
+                <h1 class="slds-truncate">{!v.car.Contact__r.Name}</h1>
+        
+            </div>
+        </div>
+    </lightning:button>
+    
+	
+</aura:component>

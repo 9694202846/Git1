@@ -1,0 +1,23 @@
+<aura:component access="global"
+                implements="flexipage:availableForAllPageTypes"
+                controller="NotificationAuraCtrl">
+    
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    <aura:attribute name="intervalId" type="Integer" default="0"/>
+    <aura:attribute name="mouseover" type="Boolean" default="true"/>
+    <aura:attribute name="notification" type="Notification__c" />
+
+    
+    <div id="space" class="slds-box slds-theme_shade slds-theme_alert-texture" aura:id="div1" onmouseover="{!c.handleMouseOver}" onmouseout="{!c.handleMouseOut}">
+        <div id="parentDIV" style="overflow:hidden" >
+            <p style="position:relative" id="tofloat" aura:id="p1" onmouseover="{!c.handleMouseOver}" onmouseout="{!c.handleMouseOut}">
+                <span>
+                    <lightning:pill label="{!v.notification.Short_Description__c}" onclick="{!c.handleShowModalFooter}" hasError="true" title="Please click to see the details"/>
+                </span>
+                    
+            </p>
+        </div>
+    </div>
+
+</aura:component>

@@ -1,0 +1,6 @@
+<aura:component >
+	    <aura:handler name="componenetEvent" event="c:CmpEvent" action="{!c.handleComponentEvent}" includeFacets="true" />
+        {!v.body}
+
+   
+</aura:component>

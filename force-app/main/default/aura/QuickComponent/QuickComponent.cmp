@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="ContactNewController">    
+    <aura:attribute name="createContact" type="contact"/>
+    <aura:attribute name="accountId" type="String"/>
+        <aura:attribute name="recordId" type="String"/>
+
+    
+    
+    
+    
+    <lightning:input label="FirstName" value="{!v.createContact.FirstName}" type="text" required="true"/>
+    <lightning:input label="LastName" value="{!v.createContact.LastName}" type="text"/>
+    <lightning:input label="Email" value="{!v.createContact.Email}" type="email"/>
+    <lightning:input label="Phone" value="{!v.createContact.Phone}" type="phone"/>
+    <lightning:button label="Create Contact" title="Neutral action" variant="brand" onclick="{!c.saveContact}" />
+    
+    
+    
+    
+    
+    
+    
+    
+</aura:component>

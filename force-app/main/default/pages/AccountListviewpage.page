@@ -1,0 +1,31 @@
+<apex:page standardController="Account" recordSetVar="accounts" 
+              tabStyle="Account"
+    sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            
+            <apex:pageBlock >
+               
+                    <apex:outputLabel value="View"/>
+                    <apex:selectList value="{!filterId}" size="1">
+                        <apex:actionSupport event="onchange" rerender="O_table"/>
+                        <apex:selectOptions value="{!listviewoptions}"/>
+                    </apex:selectList>
+                
+            </apex:pageBlock>
+
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="O" id="O_table">
+                <apex:column value="{!O.name}"/>
+                
+                <apex:column headerValue="Phone">
+                    <apex:inputField value="{!O.Phone}"/>
+                    </apex:column>
+                    
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

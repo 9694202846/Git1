@@ -1,0 +1,110 @@
+<apex:page >
+  <!-- <aura:component controller="Test1con" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+<aura:attribute name="recordId" type="Id" />
+<aura:attribute name="Account" type="Account" />
+<aura:attribute name="Contacts" type="Contact" />
+<aura:attribute name="Columns" type="List" />
+<force:recordData aura:id="accountRecord"
+                  recordId="{!v.recordId}"
+                  targetFields="{!v.Account}"
+                  layoutType="FULL"
+                  />
+<lightning:card iconName="standard:contact" title="{! 'Contact List for ' + v.Account.Name}">
+    <!-- Contact list goes here -->
+
+    <!---
+
+    
+TECHNICAL GUIDELINES
+
+
+Out-Of-Office (OOO) built-in functionality needs to be enhanced because a user must be able to set her/his deputy for the period of the OOO. As OutOfOffice object shouldn't be modified, Deputy user should be a custom field in User object. That custom field will be of type Hierarchical Relationship and the field name: "Deputy during Out-of-Office". Deputy can only be a Claudia user. 
+
+
+User must be able to select her deputy in the same dialog where she sets the OOO message and time period. Therefore, the built-in OOO button on User page should be hidden and replaced by a Lightning Flow component which should be placed on the right hand side of the User page. 
+
+
+Flow component shows first a checkbox "Set Out-of-Office message". After the user has checked that box, fields for message, deputy, and time period are showed. A helptext, or similar, to be added to message field: "Please state your Out-Of-Office period here", as otherwise other users don't know how long the user is going to be OOO. When user has selected the values she clicks Next. Flow then finishes and displays a text "You are Out-of-Office until {END DATE}". When page is refreshed, a deputy field on User record is populated with the chosen value and message is visible. Note, you need to run the Flow on System user in order to enable automatic OutOfOffice-record deletion when the time period finishes. When this occurs, a trigger is needed to empty the value in the User's deputy field (Note: this is critical feature. Unless this works, other lookup filters think the user is permanently OOO). Deputy field on the Flow should be mandatory, because lookup filters from other objects rely on that information whether deputy is set or not; in other words, if the deputy field is populated, the user is Out-Of-Office, and if the deputy field is null, user is available. NOTE: only the Flow should have rights to write to that User.Deputy field, not the User itself.
+
+
+When user sets the OOO, she (as CC) and her deputy receives an email which says he is her deputy:
+
+
+"Dear {deputy.FirstName deputy.LastName},
+
+
+{USER}
+
+
+has appointed your as deputy for the time {STARTDATE - ENDDATE} due to: {MESSAGE}
+During this period you may get notification emails related to {USER}'s tasks." 
+
+
+User can end the OOO before the set end date. This happens by unchecking the "Uncheck to return from Out-Of-Office" checkbox and clicking Next.
+
+
+User can only set one OOO time period and one deputy at once. This is because Salesforce's built-in OOO doesn't allow consecutive OOOs to be created. We are not overriding this original functionality.
+
+
+
+
+
+(Note: Investment & Pricing Escalation are Case Record Types > Case Object is going to be refactored in near future)
+
+
+OBJECTS & RECORD TYPES AFFECTED
+
+
+Investment
+
+
+    Investment decision (Approved OR Rejected) to be submitted to deputy (email notification) (> this should be implemented in the same automation procedure as the normal notification sending. Thus, IF User.deputy field != null > send to deputy)
+    investment escalation (Endorsement/Approver): users "out of office" not to be visible when assigning Endorser/Approver.  > Lookup filter to Case Objects's Investment_Approver_c and Investment_Endorser_c fields: User.deputy field EQUALS null)
+
+
+Pricing escalation
+
+
+    users "out of office" not to be visible when assigning Endorser/Approver, deputies to be visible instead > similar lookup filter handles as above but fields are: Approver_c and Endorser_c
+
+
+Lead
+
+
+    lead to be assigned to the deputy > if Assigned User is OOO, Assign deputy and display in Info message after save.
+
+
+
+
+
+PROFILES
+
+
+All Claudia users
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    This is the user story --->
+
+</apex:page>

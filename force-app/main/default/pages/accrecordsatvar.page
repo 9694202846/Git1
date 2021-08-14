@@ -1,0 +1,20 @@
+<apex:page standardController="contact" >
+<apex:form >
+<apex:pageBlock title="contact list">
+  <apex:pageBlockSection title="information">
+  <apex:inputField value="{!contact.firstname}"/>
+  
+  
+  
+  </apex:pageBlockSection>
+
+
+
+
+
+
+
+</apex:pageBlock>
+</apex:form>
+  
+</apex:page>

@@ -1,0 +1,84 @@
+<apex:page standardController="Account" showHeader="true"
+
+      tabStyle="account" >
+      <apex:form >
+<apex:tabPanel >
+ <apex:tab label="Details" name="Account" id="tabdetails">
+
+         <apex:detail relatedList="true" title="true"/>
+
+      </apex:tab>
+      <apex:tab label="notes and Attachment">
+      
+      
+      
+      
+      
+      </apex:tab>
+      <apex:tab label="Open Activity" Name="Open Activity">
+      
+      
+      
+      
+      
+      
+      </apex:tab>
+      <apex:tab label="saving" name="saving">
+      
+      
+      
+      
+      
+      </apex:tab>
+      </apex:tabPanel>
+      <apex:pageBlock >
+<apex:pageBlockSection title="Account Information" columns="1">
+<apex:inputtext value="{!account.Name}" tabIndex="1"/>
+<apex:inputText value="{!account.Phone}" tabindex="3"/>
+<apex:inputText value="{!account.BillingCity}" tabindex="2"/>
+<apex:inputText value="{!account.BillingCountry}" tabindex="4"/>
+<apex:inputText value="{!account.BillingState}" tabindex="5"/>
+
+
+
+
+
+</apex:pageBlockSection>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</apex:pageBlock>
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton value="save" action="{!save}"/>
+
+
+
+
+
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+      
+
+
+
+
+
+
+
+
+ 
+</apex:page>

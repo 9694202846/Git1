@@ -1,0 +1,28 @@
+<aura:component controller="LightningEventController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="eventList" type="Event[]" default = "[]"/>
+    <aura:attribute name="eventType" type="string" default ="MY TODAY" /> 
+    <aura:attribute name="columns" type="List" default = "[]"/> 
+     <aura:attribute name="showListView" type="boolean" default="false"/>
+
+<lightning:select aura:id="select" name="select" label="Select a pie" onchange="{! c.onChange}">
+        
+        <option value="MY TODAY">MY TODAY</option>
+        <option value="MY OVERDUE">MY OVERDUE</option>
+        <option value="MY UPCOMING">MY UPCOMING</option>
+        <option value="MY COMPLETED">MY COMPLETED</option>
+        
+    </lightning:select>
+     <aura:if isTrue="{!v.showListView}">
+    <div>
+    <div>
+    <lightning:datatable aura:id="multiResult"
+                                         data="{!v.eventList}"
+                                         keyField="Id"
+                                         columns="{!v.columns}"
+                                         hideCheckboxColumn="true" />
+    
+    </div>
+   </div>
+      </aura:if>
+</aura:component>

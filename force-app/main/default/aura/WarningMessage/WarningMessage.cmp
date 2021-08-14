@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller='AccountCustomerController' >
+<aura:attribute name="validateAccount" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+
+    <div>
+        <lightning:button label="Information"
+                          variant="brand"
+                          onclick="{!c.showMyToast}"/>
+        <lightning:button label="Error"
+                          variant="destructive"
+                          onclick="{!c.showError}"/>
+        <lightning:button label="Warning"
+                          variant="neutral"
+                          onclick="{!c.showWarning}"/>
+        <lightning:button label="Success"
+                          variant="success"
+                          onclick="{!c.showSuccess}"/>
+    </div> 
+</aura:component>

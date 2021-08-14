@@ -1,0 +1,5 @@
+<apex:page standardController="CRXI_select__c" docType="html-5.0" >
+
+        <c:Drag_and_Down parentId="{!$CurrentPage.parameters.id}" DragDropHeight="100px" />
+
+    </apex:page>

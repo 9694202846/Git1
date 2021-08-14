@@ -1,0 +1,30 @@
+<apex:page standardController="Contact">
+<apex:form >
+<apex:pageBlock mode="Detail" >
+<apex:pageBlockSection title="Contact Information">
+<apex:outputField value="{!contact.Name}"/>
+<apex:outputField value="{!Contact.Phone}"/>
+<apex:outputField value="{!Contact.Email}"/>
+<apex:commandButton value="Save"  />
+
+
+
+
+
+
+
+
+</apex:pageBlockSection>
+
+
+
+
+
+
+</apex:pageBlock>
+
+
+
+</apex:form>
+  
+</apex:page>

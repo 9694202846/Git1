@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:attribute name="today" type="Date" default=""/>
+	<aura:attribute name="myBool" type="Boolean" default="true"/>
+    <lightning:card  title="Out of Office">
+	
+    
+    <ui:inputCheckbox aura:id="checkbox" label="Set Out-of-Office message" change="{!c.onCheck}"/>
+    <ui:inputDateTime aura:id="today" label="Start Date" class="field" value="" displayDatePicker="true" />
+    <ui:inputDateTime aura:id="today" label="End Date" class="field" value="" displayDatePicker="true" />
+    <lightning:textarea name="input1" label="Message" />
+
+	
+	
+    </lightning:card>
+</aura:component>

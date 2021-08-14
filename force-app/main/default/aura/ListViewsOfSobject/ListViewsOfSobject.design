@@ -1,0 +1,4 @@
+<design:component>
+	    <design:attribute name="SObjectName" label="Name of Sobject" description="Limit the number of rows display in listview.Example=5"/> 
+
+</design:component>

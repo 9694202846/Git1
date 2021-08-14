@@ -1,0 +1,16 @@
+<aura:component access="global"
+                implements="flexipage:availableForAllPageTypes"
+                controller="NotificationAuraCtrl">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="notification" type="Notification__c" />
+
+    <div class="slds-text-align_center">
+        <lightning:icon class="slds-text-align_center" iconName="utility:error" alternativeText="Error!" variant="error" title="error variant" /> 
+        &nbsp;&nbsp;
+        Review this errors
+    </div>
+    <br/>
+    <br/>
+    <ui:outputRichText class="slds-text-longform" value="{!v.notification.Notification_Details__c}"/>
+</aura:component>

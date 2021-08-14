@@ -1,0 +1,4 @@
+<aura:component >
+    <c:Ccmp aura:id="newid"/>
+    <lightning:button name="invoke child" label="invoke child" onclick="{!c.doclick}" />
+</aura:component>

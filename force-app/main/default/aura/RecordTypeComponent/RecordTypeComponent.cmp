@@ -1,0 +1,22 @@
+<aura:component controller="SampleAuraController" implements="flexipage:availableForAllPageTypes,force:appHostable">
+     
+    /* <!--Declare Attributes-->
+    <aura:attribute name="recordTypeMap" type="Map"/>
+    <aura:attribute name="selectedRecordTypeId" type="String"/>
+    <!--Declare Handler-->
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  -->
+     
+    <!--Component Start-->
+    <div class="slds-m-around--xx-large">
+        <div class="container-fluid">
+            <lightning:radioGroup name="radioGroup"
+                                  label="Select Record Type"
+                                  required="true"
+                                  options="{!v.recordTypeMap}"
+                                  value="{!v.selectedRecordTypeId}"
+                                  type="radio"/>
+        </div>
+        <br/>
+        <lightning:button variant="brand" label="Submit" onclick="{!c.handleCreateRecord}" />  
+    </div> */
+</aura:component>

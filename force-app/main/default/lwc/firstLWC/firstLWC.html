@@ -1,0 +1,22 @@
+<template>
+    This is my first LWC Compoent.
+    This is my first LWC Compoent.
+    This is my first LWC Compoent.
+    This is my first LWC Compoent.
+    <p><lightning-formatted-text value="Email info@salesforce.com" linkify></lightning-formatted-text></p>
+    <p><lightning-formatted-text value="Email salesforce.com and goyal.payal09@gmail.com and info.salesforce.com" linkify></lightning-formatted-text></p>
+
+    <div class="slds-p-around_medium lgc-bg">
+        Subscribe
+        <lightning-helptext content="You'll receive weekly updates"></lightning-helptext>
+    </div>
+
+    <lightning-input-rich-text
+        value={myVal}   >
+    </lightning-input-rich-text>
+
+    <lightning-button label="Set formats"
+                      onclick={handleClick}>
+    </lightning-button>
+
+</template>

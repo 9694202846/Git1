@@ -1,0 +1,22 @@
+<apex:page >
+  <apex:form >
+  <apex:pageBlock title="Account Edit">
+  <apex:pageBlockSection columns="1">
+  <p>{!$User.FirstName}</p>
+  
+  
+  
+  
+  
+  </apex:pageBlockSection>
+  
+  
+  
+  
+  
+  </apex:pageBlock>
+  
+  
+  
+  </apex:form>
+</apex:page>

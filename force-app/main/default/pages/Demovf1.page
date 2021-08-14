@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="StandardControllerExtension"
+
+>
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockButtons >
+<apex:commandButton action="{!save}" value="save" />
+</apex:pageblockButtons>
+<apex:inputField value="{!Account.Rating}" />
+</apex:pageBlock>
+</apex:form>
+</apex:page>

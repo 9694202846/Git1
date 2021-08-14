@@ -1,0 +1,84 @@
+<apex:page standardController="Account" renderAs="pdf" sidebar="false" showHeader="false" applyBodyTag="false" extensions="DealerProfileController">
+<apex:panelGrid columns="2" width="100%">
+        <apex:image id="dayRossImage" value="{!$Resource.Test_logo}" width="100" height="100"/>
+      <apex:image url="/sfc/servlet.shepherd/version/download/{!Image}" width="100" height="100" rendered="{!IF(Image != '' || Image != null ,'true','false')}"/> 
+    </apex:panelGrid>
+
+<br/>    
+   <apex:panelGrid columns="4" id="theGrid4" width="100%" style="font-family:sans-serif;text-align:left;font-size:12pt;">
+        <apex:outputText value="Service Region:" />
+       
+       <apex:outputText value="{!Account.Name}"/>
+        <apex:outputText value="{!Account.Parent.Name}"/>
+        <!-- <apex:outputText value="Service Terminal:" />
+        <apex:outputText value="{!Account.Dealer_Service_Terminal__c}"/>
+        <apex:outputText value="OEM:" />
+       
+        <apex:outputText value="Hours Mon - Fri:" />
+        <apex:outputText value="{!Account.Dealer_Business_Day_Hours__c}"/> -->
+        <apex:outputText value="Dealer Code:" />
+      <!--  <apex:outputText value="{!Account.Dealer_Code__c}"/>
+        <apex:outputText value="Saturday Hours:" />
+        <apex:outputText value="{!Account.Dealer_Saturday_Hours__c}"/>
+        <apex:outputText value="Route:" />
+        <apex:outputText value="{!Account.Dealer_Route__c}"/>
+        <apex:outputText value="Dealer Principal:" />
+        <apex:outputText value="{!Account.Dealer_Principal_Contact__r.Name}"/>
+        <apex:outputText value="Stop Number:" />
+        <apex:outputText value="{!Account.Dealer_Stop_Number__c}"/>
+        <apex:outputText value="Parts Manager:" />
+        <apex:outputText value="{!Account.Dealer_Parts_Manager__r.Name}"/>
+        <apex:outputText value="Delivery Time:" />
+        <apex:outputText value="{!Account.Dealer_Delivery_Time__c}"/>
+        <apex:outputText value="Unattended Access:" />
+        <apex:outputText value="{!Account.Dealer_Unattended_Access__c}"/>
+        <apex:outputText value="Dealer Name:" />
+        <apex:outputText value="{!Account.Name}"/> -->
+        <apex:panelGroup >
+            <apex:outputText value="Gate Keys: " />
+          <!--  <apex:outputText value="{!Account.Dealer_Gate_Keys__c}"/> -->
+        </apex:panelGroup>
+        <apex:panelGroup >
+            <apex:outputText value="Door Keys: " />
+           <!-- <apex:outputText value="{!Account.Dealer_Door_Keys__c}"/>-->
+        </apex:panelGroup>
+        <apex:outputText value="Address:" />
+       <!-- <apex:outputText value="{!Account.BillingStreet}"/>
+        <apex:outputText value="Other Keys:" />
+        <apex:outputText value="{!Account.Dealer_Other_Keys__c}"/>
+        <apex:outputText value="City:" />
+        <apex:outputText value="{!Account.BillingCity}"/>
+        <apex:outputText value="Alarm System:" />
+        <apex:outputText value="{!Account.Dealer_Alarm_System__c}"/>
+        <apex:outputText value="Province:" />
+        <apex:outputText value="{!Account.Dealer_Province__c}"/>
+        <apex:outputText value="Alarm Code:" />
+        <apex:outputText value="{!Account.Dealer_Alarm_Code__c}"/>
+        <apex:outputText value="" />
+        <apex:outputText value=""/>
+        <apex:outputText value="Emergency Contact:" />
+        <apex:outputText value="{!Account.Dealer_Emergency_Contact__r.Name}"/>
+        <apex:outputText value="Postal Code:" />
+        <apex:outputText value="{!Account.BillingPostalCode}"/>
+        <apex:outputText value="Emergency Phone:" />
+        <apex:outputText value="{!Account.Dealer_Emergency_Phone__c}"/>
+        <apex:outputText value="Dealer Phone:" />
+        <apex:outputText value="{!Account.Phone}"/>
+        <apex:outputText value="Alt EmergencyContact:" />
+        <apex:outputText value="{!Account.Dealer_Alternate_Emergency_Contact__r.Name}"/>
+        <apex:outputText value="Dealer Fax:" />
+        <apex:outputText value="{!Account.Fax}"/>
+        <apex:outputText value="Alt Emergency Phone:" />
+        <apex:outputText value="{!Account.Dealer_Alternate_Emergency_Phone__c}"/>
+        <apex:outputText value="Delivery Day:" />
+        <apex:outputText value="{!Account.Dealer_Delivery_Day__c}"/>
+        <apex:outputText value="Alt Delivery:" />
+        <apex:outputText value="{!Account.Dealer_Alternate_Delivery__c}"/>
+        <apex:outputText value="Alternate DealerCode:" />
+        <apex:outputText value="{!Account.Dealer_Alternate_Code__c}"/>
+        <apex:outputText value="Alternate DealerName:"/>
+        <apex:outputText value="{!Account.Dealer_Alternate__r.Name}"/> -->
+    </apex:panelGrid>
+    
+    
+</apex:page>

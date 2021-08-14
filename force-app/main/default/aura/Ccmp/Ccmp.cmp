@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:method name="child"  action="{!c.handlechild}" access="public"/>
+    <aura:attribute name="param1" type="string"/>
+    <aura:attribute name="param2" type="String" default="parameter 1"/> 
+
+</aura:component>

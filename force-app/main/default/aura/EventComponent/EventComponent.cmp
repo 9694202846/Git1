@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="listViewName" type="String"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:select aura:id="select" name="select" label="Event ListViews" onchange="{! c.onChange }">
+        <option value="">choose one...</option>
+        <option value="Today">Today</option>
+        <option value="My Overdue Events">My Overdue Events</option>
+        <option value=" My Upcoming Events"> My Upcoming Events</option>
+        <option value="My Completed Events">My Completed Events</option>
+        
+    </lightning:select>
+ 
+   
+    
+
+</aura:component>

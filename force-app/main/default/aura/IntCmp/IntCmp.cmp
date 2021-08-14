@@ -1,0 +1,20 @@
+<aura:component controller="Mapvalue" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+
+    <!-- <aura:handler  name="init" value="{!this}" action="{!c.doinit}"/>
+
+        <aura:attribute type="map" name="Mapuse"/>  // Map type attribute to hold map value
+       
+        {!v.Mapuse.key1} 
+        {!v.Mapuse.key2}
+        {!v.Mapuse.key3}-->
+    
+     
+
+<aura:attribute name="Anyname" type="String" default="text1" />
+    
+<aura:handler  name="change" value="{!v.Anyname}" action="{!c.doinit1}"/>
+    <lightning:input name="enter text" value="{!v.Anyname}"/>
+
+
+</aura:component>
